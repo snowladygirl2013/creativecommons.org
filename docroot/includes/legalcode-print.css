@@ -8,9 +8,11 @@
     display: none !important;
   }
 
+  .cc-collapsible__trigger,
   .site-header-wrapper,
   #header-below,
   #language-selector-block,
+  #deed-disclaimer,
   #menu-toggle,
   #deed-foot,
   .site-footer .cc-footer-links {
@@ -19,13 +21,27 @@
 
   h1, h2, h3 { line-height: 1.1; }
 
-  #deed-head { text-align: center; }
-
-  #cc-logo img {
-    display: inline-block;
-    height: 50px;
-    margin: 0 5px;
+  #deed-head {
+    position: relative;
+    min-height: 1in;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
   }
+
+  #deed-head h1 {
+    font-size: 2.8rem;
+    border-bottom: solid 4px #000;
+    padding-bottom: 0.15em;
+    margin-bottom: 0.15em;
+  }
+
+  #deed-head h2 {
+    border-bottom: 0 none;
+    font-size: 3.6rem;
+    margin: 10px 0 0 0;
+  }
+
+  #cc-logo { display: none; }
 
   h1 {
     border-bottom: solid 4px #000;
@@ -40,20 +56,21 @@
   }
 
   h3 {
-    font-size: 15px;
+    font-size: 25px;
     margin: 30px 0 15px;
   }
+
+  .shaded {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+
+  .shaded :last-child { margin-bottom: 0; }
 
   #deed-license {
     padding-bottom: 0.15em;
     margin-bottom: 40px;
-  }
-
-  #deed-license h2 {
-    border-bottom: 2px solid #000;
-    display: inline-block;
-    font-size: 13px;
-    margin: 0;
   }
 
   #deed-main { clear: both; }
@@ -62,6 +79,36 @@
   ul li {
     list-style-image: none;
   }
+
+  #deed-main ol,
+  #deed-main ul {
+      margin: 1.75em 0;
+      padding-left: 2em;
+  }
+
+  #deed-main ol ol,
+  #deed-main ul ul {
+      margin: 0;
+  }
+
+  #deed-main ol {
+    margin-left: 0;
+  }
+
+  #deed-main ol.arabic { list-style-type: none; }
+
+  /* Please read:
+     - https://www.w3schools.com/tags/att_ol_type.asp
+     - https://stackoverflow.com/questions/27104096/css-selector-type-var-not-selecting-lower-alpha-versus-upper-alpha
+  */
+  #deed-main ol[type="a"] { list-style-type: lower-alpha; }
+  /*#deed-main ol[type="A"] { list-style-type: upper-alpha; } no case-sensitive :( */
+  #deed-main ol[type="a"] ol[type="a"] { list-style-type: upper-alpha; } /* crappy solution */
+  #deed-main ol[type="i"] { list-style-type: lower-roman; }
+  /*#deed-main ol[type="I"] { list-style-type: upper-roman; } no case-sensitive :( */
+  #deed-main ol[type="i"] ol[type="i"] { list-style-type: upper-roman; } /* crappy solution */
+
+  #deed-main ol li { list-style-image: none; }
 
   body:not(.lang-en) .site-footer .cc-footer-contact,
   body:not(.lang-en) .site-footer .cc-footer-license,
