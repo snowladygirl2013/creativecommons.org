@@ -155,7 +155,8 @@ body.rtl #deed-main-content #libre {
 }
 
 #header-below,
-#languages {
+#languages,
+#language-selector-block {
     display: none;
 }
 
