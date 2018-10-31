@@ -115,4 +115,13 @@
   body:not(.lang-en) .site-footer .cc-footer-links {
     display: none !important;
   }
+
+  .custom-logo-link img { display: none; }
+
+  .custom-logo-link {
+    content: url('https://login.creativecommons.org/themes/ccid/logo.png');
+    display: block;
+    height: 59px;
+    width: 240px;
+  }
 }
